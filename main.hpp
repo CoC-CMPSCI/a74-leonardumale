@@ -1,31 +1,20 @@
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "main.hpp"
 
-// Array insertion / deletion in a sorted array
-
-#include <iostream>
-#include <iomanip>
-using namespace std;
-
-void insertone(int[], int &, int);
-void deleteone(int[], int &, int);
-void printout(int[], int);
-
-void insertone(int number[], int &length, int usernum)
+int main()
 {
-    // TODO: insert usernum into the sorted array, then increment length
-}
+	const int SIZE = 100;
+	int usernum;
+	int N = 10;
+	int number[SIZE] = {12, 15, 19, 21, 25, 27, 29, 33, 37, 43};
 
-void deleteone(int number[], int &length, int usernum)
-{
-    // TODO: find usernum, shift remaining elements left, decrement length
-}
+	cout << "Enter the number to insert\n";
+	cin >> usernum;
+	printout(number, N);
+	insertone(number, N, usernum);
+	printout(number, N);
 
-void printout(int number[], int last)
-{
-    for (int i = 0; i < last; i++)
-        cout << setw(5) << number[i];
-    cout << endl;
+	cout << "Enter the number to delete\n";
+	cin >> usernum;
+	deleteone(number, N, usernum);
+	printout(number, N);
 }
-
-#endif
